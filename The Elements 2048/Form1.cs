@@ -12,83 +12,43 @@ namespace The_Elements_2048 {
     public partial class GameWindow : Form {
         public GameWindow () {
             InitializeComponent ();
-            Game.CreateNewGame (this.panel1, Current_ScoreChanged, Current_HighscoreChanged, this.lblBestValue);
+            //Game.CreateNewGame (this.panel1, Current_ScoreChanged, Current_HighscoreChanged, this.lblBestValue);
         }
 
-        void Current_HighscoreChanged (object sender, EventArgs e) {
-            this.lblBestValue.Text = Game.Current.Highscore.ToString ();
-        }
+        //void Current_HighscoreChanged (object sender, EventArgs e) {
+        //    this.lblBestValue.Text = Game.Current.Highscore.ToString ();
+        //}
 
-        void Current_ScoreChanged (object sender, EventArgs e) {
-            this.lblScoreValue.Text = Game.Current.Score.ToString ();
-        }
+        //void Current_ScoreChanged (object sender, EventArgs e) {
+        //    this.lblScoreValue.Text = Game.Current.Score.ToString ();
+        //}
 
         private void label3_Click (object sender, EventArgs e) {
-            Game.Current.Dispose ();
-            Game.CreateNewGame (this.panel1, Current_ScoreChanged, Current_HighscoreChanged);
-            this.lblScoreValue.Text = "0";
+        //    Game.Current.Dispose ();
+        //    Game.CreateNewGame (this.panel1, Current_ScoreChanged, Current_HighscoreChanged);
+        //    this.lblScoreValue.Text = "0";
         }
 
         private void GameWindow_KeyDown (object sender, KeyEventArgs e) {
-            if (Game.Current.AreTilesMoving) {
-                return;
-            }
+            //if (Game.Current.AreTilesMoving) {
+            //    return;
+            //}
 
-            if (e.KeyCode == Keys.Right) {
-                Tile.Tile_FinishedMoving (null, null);
-                Right ();
-            } else if (e.KeyCode == Keys.Left) {
-                Tile.Tile_FinishedMoving (null, null);
-                Left ();
-            } else if (e.KeyCode == Keys.Up) {
-                Tile.Tile_FinishedMoving (null, null);
-                Up ();
-            } else if (e.KeyCode == Keys.Down) {
-                Tile.Tile_FinishedMoving (null, null);
-                Down ();
-            } else if (e.KeyCode == Keys.B) {
-                ;
-            }
-        }
-
-        private void Right () {
-            for (int x = 0 ; x < 4 ; x++) {
-                for (int y = 0 ; y < 4 ; y++) {
-                    if (Game.Current.TileMatrix[Math.Abs (x - 3), y] != null)
-                        if (Game.Current.TileMatrix[Math.Abs (x - 3), y].Move (GameEssentials.IMovableDirection.Right))
-                            Game.Current.NeedToAddTile = true;
-                }
-            }
-        }
-
-        private void Left () {
-            for (int x = 0 ; x < 4 ; x++) {
-                for (int y = 0 ; y < 4 ; y++) {
-                    if (Game.Current.TileMatrix[x, y] != null)
-                        if (Game.Current.TileMatrix[x, y].Move (GameEssentials.IMovableDirection.Left))
-                            Game.Current.NeedToAddTile = true;
-                }
-            }
-        }
-
-        private void Up () {
-            for (int y = 0 ; y < 4 ; y++) {
-                for (int x = 0 ; x < 4 ; x++) {
-                    if (Game.Current.TileMatrix[x, y] != null)
-                        if (Game.Current.TileMatrix[x, y].Move (GameEssentials.IMovableDirection.Up))
-                            Game.Current.NeedToAddTile = true;
-                }
-            }
-        }
-
-        private void Down () {
-            for (int y = 0 ; y < 4 ; y++) {
-                for (int x = 0 ; x < 4 ; x++) {
-                    if (Game.Current.TileMatrix[x, Math.Abs (y - 3)] != null)
-                        if (Game.Current.TileMatrix[x, Math.Abs (y - 3)].Move (GameEssentials.IMovableDirection.Down))
-                            Game.Current.NeedToAddTile = true;
-                }
-            }
+            //if (e.KeyCode == Keys.Right) {
+            //    Tile.Tile_FinishedMoving (null, null);
+            //    Right ();
+            //} else if (e.KeyCode == Keys.Left) {
+            //    Tile.Tile_FinishedMoving (null, null);
+            //    Left ();
+            //} else if (e.KeyCode == Keys.Up) {
+            //    Tile.Tile_FinishedMoving (null, null);
+            //    Up ();
+            //} else if (e.KeyCode == Keys.Down) {
+            //    Tile.Tile_FinishedMoving (null, null);
+            //    Down ();
+            //} else if (e.KeyCode == Keys.B) {
+            //    ;
+            //}
         }
     }
 }
