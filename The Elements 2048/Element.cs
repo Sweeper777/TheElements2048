@@ -5,6 +5,7 @@ using System.Text;
 
 namespace The_Elements_2048 {
     public enum Element {
+        None = 0,
         Hydrogen = 1,
         Helium = 2,
         Lithium = 3,
