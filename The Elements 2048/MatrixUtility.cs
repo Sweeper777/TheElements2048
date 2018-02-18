@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 namespace The_Elements_2048
 {
@@ -37,6 +37,23 @@ namespace The_Elements_2048
                     newColumn++;
                 }
                 newRow++;
+            }
+            return newMatrix;
+        }
+
+        public static T[,] RotateClockwise<T>(this T[,] oldMatrix)
+        {
+            var dimensionX = oldMatrix.GetLength(1);
+            var dimensionY = oldMatrix.GetLength(0);
+
+            var newMatrix = new T[dimensionX, dimensionY];
+
+            for (var oldColumn = 0; oldColumn < dimensionX; ++oldColumn)
+            {
+                for (var oldRow = 0; oldRow < dimensionY; ++oldRow)
+                {
+                    newMatrix[oldColumn, oldRow] = oldMatrix[dimensionY - oldRow - 1, oldColumn];
+                }
             }
             return newMatrix;
         }
