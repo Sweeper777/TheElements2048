@@ -35,5 +35,9 @@ namespace The_Elements_2048
             Board[randomEmptySpace.x, randomEmptySpace.y] = newElement;
         }
 
+        string RowToString(Element[] row) {
+            return string.Concat(row.Select(x => (char)(x + 96)));
+        }
+
     }
 }
