@@ -35,6 +35,13 @@ namespace The_Elements_2048
             Board[randomEmptySpace.x, randomEmptySpace.y] = newElement;
         }
 
+        Element[] EvaluateRow(Element[] row) {
+            StringBuilder rowString = new StringBuilder(RowToString(row));
+            rowString.Replace("`", "");
+            var regex = new Regex("([a-p])\\1");
+            int lastIndex = -1;
+        }
+
         string RowToString(Element[] row) {
             return string.Concat(row.Select(x => (char)(x + 96)));
         }
