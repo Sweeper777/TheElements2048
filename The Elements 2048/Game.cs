@@ -28,5 +28,12 @@ namespace The_Elements_2048
             }
         }
 
+        public void SpawnNewElement() {
+            var emptySpaces = EmptySpaces;
+            var randomEmptySpace = emptySpaces[random.Next(emptySpaces.Count)];
+            var newElement = random.Next(3) == 0 ? Element.Helium : Element.Hydrogen;
+            Board[randomEmptySpace.x, randomEmptySpace.y] = newElement;
+        }
+
     }
 }
