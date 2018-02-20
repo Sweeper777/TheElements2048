@@ -40,6 +40,19 @@ namespace The_Elements_2048
             rowString.Replace("`", "");
             var regex = new Regex("([a-p])\\1");
             int lastIndex = -1;
+            while (true) {
+                var match = regex.Match(rowString.ToString(), lastIndex + 1);
+                if (match.Success) {
+                    char newChar = (char)(match.Value[0] + 1);
+                    rowString.Remove(match.Index, match.Length);
+                    rowString.Insert(match.Index, newChar);
+                    lastIndex = match.Index;
+
+                } else {
+                    break;
+                }
+            }
+            return StringToRow(rowString.ToString());
         }
 
         string RowToString(Element[] row) {
