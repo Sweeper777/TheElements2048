@@ -75,5 +75,11 @@ namespace The_Elements_2048
             return moved;
         }
 
+        public bool MoveUp() {
+            var newBoard = EvaluateBoard(Board.RotateCounterClockwise()).RotateClockwise();
+            var moved = !newBoard.Cast<Element>().SequenceEqual(Board.Cast<Element>());
+            Board = newBoard;
+            return moved;
+        }
     }
 }
