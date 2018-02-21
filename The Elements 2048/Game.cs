@@ -48,6 +48,7 @@ namespace The_Elements_2048
                     rowString.Insert(match.Index, newChar);
                     lastIndex = match.Index;
 
+                    Score += TheElements2048Utility.ElementScoreDictionary[(Element)(newChar - 96)];
                 } else {
                     break;
                 }
