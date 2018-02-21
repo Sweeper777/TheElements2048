@@ -68,5 +68,12 @@ namespace The_Elements_2048
             return board.ToJagged().Select(EvaluateRow).ToArray().ToMatrix();
         }
 
+        public bool MoveLeft() {
+            var newBoard = EvaluateBoard(Board);
+            var moved = !newBoard.Cast<Element>().SequenceEqual(Board.Cast<Element>());
+            Board = newBoard;
+            return moved;
+        }
+
     }
 }
