@@ -96,5 +96,18 @@ namespace The_Elements_2048
             Board = newBoard;
             return moved;
         }
+
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine($"Score: {Score}");
+            for (int i = 0; i < Board.GetLength(1); i++) {
+                for (int j = 0; j < Board.GetLength(0); j++) {
+                    builder.Append((char)(Board[j, Board.GetLength(1) - i - 1] + 96));
+                }
+                builder.AppendLine();
+            }
+            return builder.ToString();
+        }
     }
 }
