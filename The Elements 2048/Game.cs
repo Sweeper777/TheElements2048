@@ -64,5 +64,9 @@ namespace The_Elements_2048
             return str.PadRight(boardSize, '`').Select(x => (Element)(x - 96)).ToArray();
         }
 
+        Element[,] EvaluateBoard(Element[,] board) {
+            return board.ToJagged().Select(EvaluateRow).ToArray().ToMatrix();
+        }
+
     }
 }
