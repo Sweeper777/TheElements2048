@@ -36,21 +36,22 @@ namespace The_Elements_2048
         }
 
         Element[] EvaluateRow(Element[] row) {
-            StringBuilder rowString = new StringBuilder(RowToString(row));
-            rowString.Replace("`", "");
-            var regex = new Regex("([a-p])\\1");
-            int lastIndex = -1;
-            while (true) {
-                var match = regex.Match(rowString.ToString(), lastIndex + 1);
-                if (match.Success) {
-                    char newChar = (char)(match.Value[0] + 1);
-                    rowString.Remove(match.Index, match.Length);
-                    rowString.Insert(match.Index, newChar);
-                    lastIndex = match.Index;
-
-                    Score += TheElements2048Utility.ElementScoreDictionary[(Element)(newChar - 96)];
-                } else {
-                    break;
+            var fromTo = Enumerable.Repeat(-1, row.Length).ToArray();
+            var result = Enumerable.Repeat(Element.None, row.Length).ToArray();
+            var prevVal = Element.None;
+            var pos = 0;
+            for (int i = 0; i < row.Length; i++) {
+                if (row[i] != Element.None) {
+                    if (row[i] == prevVal) {
+                        result[pos - 1]++;
+                        fromTo[i] = pos - 1;
+                        prevVal = Element.None;
+                    } else {
+                        result[pos] = row[i];
+                        fromTo[i] = pos;
+                        prevVal = row[i];
+                        pos++;
+                    }
                 }
             }
             return StringToRow(rowString.ToString());
@@ -62,6 +63,7 @@ namespace The_Elements_2048
 
         Element[] StringToRow(string str) {
             return str.PadRight(boardSize, '`').Select(x => (Element)(x - 96)).ToArray();
+            return result;
         }
 
         Element[,] EvaluateBoard(Element[,] board) {
