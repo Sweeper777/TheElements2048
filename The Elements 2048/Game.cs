@@ -42,15 +42,6 @@ namespace The_Elements_2048
                     }
                 }
             }
-            return StringToRow(rowString.ToString());
-        }
-
-        string RowToString(Element[] row) {
-            return string.Concat(row.Select(x => (char)(x + 96)));
-        }
-
-        Element[] StringToRow(string str) {
-            return str.PadRight(boardSize, '`').Select(x => (Element)(x - 96)).ToArray();
             return result;
         }
 
