@@ -57,5 +57,18 @@ namespace The_Elements_2048
             }
             return newMatrix;
         }
+
+        public static List<Position> IndicesOf<T>(this T[,] matrix, T item) {
+            var list = new List<Position>();
+            for (int i = 0; i < matrix.GetLength(0); i++) {
+                for (int j = 0; j < matrix.GetLength(1); j++) {
+                    if (EqualityComparer<T>.Default.Equals(matrix[i, j], item)) {
+                        list.Add(new Position(i, j));
+                    }
+                }
+            }
+            return list;
+        }
+
     }
 }
