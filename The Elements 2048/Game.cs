@@ -70,11 +70,10 @@ namespace The_Elements_2048
             return new BoardResult(resultingBoard, movementResults);
         }
 
-        public bool MoveUp() {
-            var newBoard = EvaluateBoard(Board.RotateCounterClockwise()).RotateClockwise();
-            var moved = !newBoard.Cast<Element>().SequenceEqual(Board.Cast<Element>());
-            Board = newBoard;
-            return moved;
+        public BoardResult MoveLeft() {
+            var boardResult = EvaluateBoard(Board);
+            Board = boardResult.Board;
+            return boardResult;
         }
 
         public bool MoveRight() {
