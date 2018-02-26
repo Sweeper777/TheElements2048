@@ -58,11 +58,6 @@ namespace The_Elements_2048
 
         }
 
-        public bool MoveLeft() {
-            var newBoard = EvaluateBoard(Board);
-            var moved = !newBoard.Cast<Element>().SequenceEqual(Board.Cast<Element>());
-            Board = newBoard;
-            return moved;
         BoardResult EvaluateBoard(Element[,] board) {
             var rowResults = board.ToJagged().Select(EvaluateRow).ToArray();
             var resultingBoard = rowResults.Select(x => x.Row).ToArray().ToMatrix();
@@ -76,12 +71,17 @@ namespace The_Elements_2048
             return boardResult;
         }
 
+        public BoardResult MoveUp() {
+            var boardResult = EvaluateBoard(Board.RotateCounterClockwise()).RotateClockwise();
+            Board = boardResult.Board;
+            return boardResult;
+        }
+
         public BoardResult MoveRight() {
             var boardResult = EvaluateBoard(Board.RotateClockwise().RotateClockwise())
                 .RotateCounterClockwise().RotateCounterClockwise();
-            var moved = !newBoard.Cast<Element>().SequenceEqual(Board.Cast<Element>());
-            Board = newBoard;
-            return moved;
+            Board = boardResult.Board;
+            return boardResult;
         }
 
         public BoardResult MoveDown() {
