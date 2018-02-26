@@ -70,5 +70,17 @@ namespace The_Elements_2048
             return list;
         }
 
+        public static U[,] Select<T, U>(this T[,] matrix, Func<T, U> transform) {
+            var newMatrix = new U[matrix.GetLength(0), matrix.GetLength(1)];
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    newMatrix[i, j] = transform(matrix[i, j]);
+                }
+            }
+            return newMatrix;
+        }
+
     }
 }
