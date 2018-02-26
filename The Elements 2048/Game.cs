@@ -84,11 +84,10 @@ namespace The_Elements_2048
             return moved;
         }
 
-        public bool MoveDown() {
-            var newBoard = EvaluateBoard(Board.RotateClockwise()).RotateCounterClockwise(); 
-            var moved = !newBoard.Cast<Element>().SequenceEqual(Board.Cast<Element>());
-            Board = newBoard;
-            return moved;
+        public BoardResult MoveDown() {
+            var boardResult = EvaluateBoard(Board.RotateClockwise()).RotateCounterClockwise(); 
+            Board = boardResult.Board;
+            return boardResult;
         }
 
         public override string ToString()
