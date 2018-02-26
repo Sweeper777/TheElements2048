@@ -56,8 +56,6 @@ namespace The_Elements_2048
             return new RowResult(result, movementResults);
         }
 
-        Element[,] EvaluateBoard(Element[,] board) {
-            return board.ToJagged().Select(EvaluateRow).ToArray().ToMatrix();
         }
 
         public bool MoveLeft() {
@@ -65,6 +63,11 @@ namespace The_Elements_2048
             var moved = !newBoard.Cast<Element>().SequenceEqual(Board.Cast<Element>());
             Board = newBoard;
             return moved;
+        BoardResult EvaluateBoard(Element[,] board) {
+            var rowResults = board.ToJagged().Select(EvaluateRow).ToArray();
+            var resultingBoard = rowResults.Select(x => x.Row).ToArray().ToMatrix();
+            var movementResults = rowResults.Select(x => x.Movements).ToArray().ToMatrix();
+            return new BoardResult(resultingBoard, movementResults);
         }
 
         public bool MoveUp() {
