@@ -42,7 +42,18 @@ namespace The_Elements_2048
                     }
                 }
             }
-            return result;
+            var movementResults = new MovementResult[fromTo.Length];
+            for (int i = 0; i < movementResults.Length; i++) {
+                if (fromTo[i] > -1)
+                {
+                    var merged = result[fromTo[i]] != row[i];
+                    var distanceMoved = i - fromTo[i];
+                    movementResults[i] = new MovementResult(merged, distanceMoved);
+                } else {
+                    movementResults[i] = new MovementResult(false, 0);
+                }
+            }
+            return new RowResult(result, movementResults);
         }
 
         Element[,] EvaluateBoard(Element[,] board) {
