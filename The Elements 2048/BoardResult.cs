@@ -12,4 +12,15 @@ namespace The_Elements_2048
             Movements = movements;
         }
     }
+
+    public struct RowResult {
+        public Element[] Row { get; }
+        public MovementResult[] Movements { get; }
+
+        public RowResult(Element[] row, MovementResult[] movements)
+        {
+            Row = row;
+            Movements = movements;
+        }
+    }
 }
