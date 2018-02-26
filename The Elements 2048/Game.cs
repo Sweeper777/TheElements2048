@@ -76,8 +76,8 @@ namespace The_Elements_2048
             return boardResult;
         }
 
-        public bool MoveRight() {
-            var newBoard = EvaluateBoard(Board.RotateClockwise().RotateClockwise())
+        public BoardResult MoveRight() {
+            var boardResult = EvaluateBoard(Board.RotateClockwise().RotateClockwise())
                 .RotateCounterClockwise().RotateCounterClockwise();
             var moved = !newBoard.Cast<Element>().SequenceEqual(Board.Cast<Element>());
             Board = newBoard;
