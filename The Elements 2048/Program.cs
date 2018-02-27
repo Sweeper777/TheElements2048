@@ -25,16 +25,16 @@ namespace The_Elements_2048 {
                 Console.WriteLine();
                 switch (key.Key) {
                     case ConsoleKey.DownArrow:
-                        moved = game.MoveDown();
+                        moved = game.MoveDown().HasMoved;
                         break;
                     case ConsoleKey.LeftArrow:
-                        moved = game.MoveLeft();
+                        moved = game.MoveLeft().HasMoved;
                         break;
                     case ConsoleKey.RightArrow:
-                        moved = game.MoveRight();
+                        moved = game.MoveRight().HasMoved;
                         break;
                     case ConsoleKey.UpArrow:
-                        moved = game.MoveUp();
+                        moved = game.MoveUp().HasMoved;
                         break;
                     default:
                         moved = false;
