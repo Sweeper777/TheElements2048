@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -23,7 +23,7 @@ namespace The_Elements_2048
             Board[randomEmptySpace.X, randomEmptySpace.Y] = newElement;
         }
 
-        Element[] EvaluateRow(Element[] row) {
+        RowResult EvaluateRow(Element[] row, bool mutatingScore) {
             var fromTo = Enumerable.Repeat(-1, row.Length).ToArray();
             var result = Enumerable.Repeat(Element.None, row.Length).ToArray();
             var prevVal = Element.None;
@@ -31,7 +31,10 @@ namespace The_Elements_2048
             for (int i = 0; i < row.Length; i++) {
                 if (row[i] != Element.None) {
                     if (row[i] == prevVal) {
-                        result[pos - 1]++;
+                        var newElement = ++result[pos - 1];
+                        if (mutatingScore) {
+                            Score += TheElements2048Utility.ElementScoreDictionary[newElement];
+                        }
                         fromTo[i] = pos - 1;
                         prevVal = Element.None;
                     } else {
@@ -56,6 +59,8 @@ namespace The_Elements_2048
             return new RowResult(result, movementResults);
         }
 
+        RowResult EvaluateRow(Element[] row) {
+            return EvaluateRow(row, true);
         }
 
         BoardResult EvaluateBoard(Element[,] board) {
