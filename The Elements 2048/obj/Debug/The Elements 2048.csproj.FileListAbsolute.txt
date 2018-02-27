@@ -13,16 +13,14 @@ C:/Users/User/documents/visual studio 2013/Projects/TheElements2048/The Elements
 C:/Users/User/documents/visual studio 2013/Projects/TheElements2048/The Elements 2048/bin/Debug/The Elements 2048.application
 C:/Users/User/documents/visual studio 2013/Projects/TheElements2048/The Elements 2048/obj/Debug/The Elements 2048.exe.manifest
 C:/Users/User/documents/visual studio 2013/Projects/TheElements2048/The Elements 2048/obj/Debug/The Elements 2048.application
+/Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Debug/The_Elements_2048.GameWindow.resources
+/Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Debug/The_Elements_2048.Properties.Resources.resources
+/Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Debug/The Elements 2048.csproj.GenerateResource.Cache
+/Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Debug/The Elements 2048.csproj.CoreCompileInputs.cache
 /Users/mulangsu/Documents/TheElements2048/The Elements 2048/bin/Debug/The Elements 2048.exe.config
 /Users/mulangsu/Documents/TheElements2048/The Elements 2048/bin/Debug/The Elements 2048.exe.manifest
 /Users/mulangsu/Documents/TheElements2048/The Elements 2048/bin/Debug/The Elements 2048.application
 /Users/mulangsu/Documents/TheElements2048/The Elements 2048/bin/Debug/The Elements 2048.exe
 /Users/mulangsu/Documents/TheElements2048/The Elements 2048/bin/Debug/The Elements 2048.pdb
-/Users/mulangsu/Documents/TheElements2048/The Elements 2048/bin/Debug/GameEssentials.pdb
-/Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Debug/The Elements 2048.csprojResolveAssemblyReference.cache
-/Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Debug/The_Elements_2048.GameWindow.resources
-/Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Debug/The_Elements_2048.Properties.Resources.resources
-/Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Debug/The Elements 2048.csproj.GenerateResource.Cache
-/Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Debug/The Elements 2048.csproj.CoreCompileInputs.cache
 /Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Debug/The Elements 2048.exe
 /Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Debug/The Elements 2048.pdb
