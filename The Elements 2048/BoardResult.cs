@@ -11,6 +11,14 @@ namespace The_Elements_2048
             Board = board;
             Movements = movements;
         }
+        public BoardResult RotateCounterClockwise() {
+            return new BoardResult(Board.RotateCounterClockwise(), Movements.RotateCounterClockwise());
+        }
+
+        public BoardResult RotateClockwise()
+        {
+            return new BoardResult(Board.RotateClockwise(), Movements.RotateClockwise());
+        }
     }
 
     public struct RowResult {
