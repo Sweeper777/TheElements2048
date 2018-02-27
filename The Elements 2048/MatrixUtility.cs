@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 namespace The_Elements_2048
 {
@@ -82,5 +83,17 @@ namespace The_Elements_2048
             return newMatrix;
         }
 
+        public static bool Any<T>(this T[,] matrix, Predicate<T> predicate) {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    if (predicate(matrix[i, j])) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
     }
 }
