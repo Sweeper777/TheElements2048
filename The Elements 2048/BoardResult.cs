@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 namespace The_Elements_2048
 {
     public struct BoardResult
@@ -11,6 +11,13 @@ namespace The_Elements_2048
             Board = board;
             Movements = movements;
         }
+
+        public bool HasMoved {
+            get {
+                return Movements.Any(x => x.DistanceMoved > 0);
+            }
+        }
+
         public BoardResult RotateCounterClockwise() {
             return new BoardResult(Board.RotateCounterClockwise(), Movements.RotateCounterClockwise());
         }
