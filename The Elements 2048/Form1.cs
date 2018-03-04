@@ -34,5 +34,13 @@ namespace The_Elements_2048
 
         private void GameWindow_KeyDown(object sender, KeyEventArgs e)
         {
+        Point GetPositionForCoordinate(int x, int y)
+        {
+            return new Point(
+                x * 100 + (x + 1) * 15,
+                y * 100 + (y + 1) * 15
+            );
+        }
+
         }
 }
