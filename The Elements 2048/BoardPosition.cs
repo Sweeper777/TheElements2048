@@ -12,5 +12,9 @@ namespace The_Elements_2048
             Y = y;
         }
 
+        public bool Equals(BoardPosition other)
+        {
+            return other.X == X && other.Y == Y;
+        }
     }
 }
