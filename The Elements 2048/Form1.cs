@@ -14,6 +14,7 @@ namespace The_Elements_2048
         public GameWindow()
         {
             InitializeComponent();
+            NewGame();
             //Game.CreateNewGame (this.panel1, Current_ScoreChanged, Current_HighscoreChanged, this.lblBestValue);
         }
 
