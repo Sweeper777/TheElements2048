@@ -16,5 +16,13 @@ namespace The_Elements_2048
         {
             return other.X == X && other.Y == Y;
         }
+
+        public override bool Equals(object obj) => obj as BoardPosition != null && Equals(other: obj as BoardPosition);
+
+        public override int GetHashCode()
+        {
+            return X + 1000 + Y;
+        }
+
     }
 }
