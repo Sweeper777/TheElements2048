@@ -34,6 +34,14 @@ namespace The_Elements_2048
 
         private void GameWindow_KeyDown(object sender, KeyEventArgs e)
         {
+        void NewGame()
+        {
+            game = new Game();
+            game.SpawnNewElement(true);
+            game.SpawnNewElement(true);
+            Redraw();
+        }
+
         void Redraw()
         {
             panel1.Controls.Clear();
