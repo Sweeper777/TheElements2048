@@ -34,6 +34,26 @@ namespace The_Elements_2048
 
         private void GameWindow_KeyDown(object sender, KeyEventArgs e)
         {
+        void Redraw()
+        {
+            panel1.Controls.Clear();
+            for (int i = 0; i < game.Board.GetLength(0); i++)
+            {
+                for (int j = 0; j < game.Board.GetLength(1); j++)
+                {
+                    if (game.Board[i, j] != Element.None)
+                    {
+                        var pictureBox = new PictureBox();
+                        pictureBox.Image = TheElements2048Utility.ElementImageDictionary[game.Board[i, j]];
+                        pictureBox.Location = GetPositionForCoordinate(i, j);
+                        pictureBox.Size = new Size(100, 100);
+                        pictureBox.Tag = new BoardPosition(i, j);
+                        panel1.Controls.Add(pictureBox);
+                    }
+                }
+            }
+        }
+
         Point GetPositionForCoordinate(int x, int y)
         {
             return new Point(
