@@ -16,11 +16,15 @@ namespace The_Elements_2048
 
         public List<Position> EmptySpaces => Board.IndicesOf(Element.None);
 
-        public void SpawnNewElement() {
+        public void SpawnNewElement(bool canSpawnHelium = false) {
             var emptySpaces = EmptySpaces;
             var randomEmptySpace = emptySpaces[random.Next(emptySpaces.Count)];
-            var newElement = random.Next(3) == 0 ? Element.Helium : Element.Hydrogen;
-            Board[randomEmptySpace.X, randomEmptySpace.Y] = newElement;
+            if (canSpawnHelium) {
+                var newElement = random.Next(3) == 0 ? Element.Helium : Element.Hydrogen;
+                Board[randomEmptySpace.X, randomEmptySpace.Y] = newElement;
+            } else {
+                Board[randomEmptySpace.X, randomEmptySpace.Y] = Element.Hydrogen;
+            }
         }
 
         RowResult EvaluateRow(Element[] row, bool mutatingScore) {
