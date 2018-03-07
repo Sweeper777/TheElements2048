@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 namespace The_Elements_2048
 {
     public class BoardPosition : IEquatable<BoardPosition>
@@ -24,5 +24,13 @@ namespace The_Elements_2048
             return X + 1000 + Y;
         }
 
+        public static bool operator ==(BoardPosition lhs, BoardPosition rhs) {
+            return lhs.Equals(rhs);
+        }
+
+        public static bool operator !=(BoardPosition lhs, BoardPosition rhs)
+        {
+            return !(lhs == rhs);
+        }
     }
 }
