@@ -105,5 +105,8 @@ namespace The_Elements_2048
             }
             animation.Start();
         }
+        void OnMoveComplete()
+        {
+        }
         }
 }
