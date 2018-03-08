@@ -105,6 +105,35 @@ namespace The_Elements_2048
             }
             animation.Start();
         }
+
+        void EvaluateBoardResult(BoardResult result, IMovableDirection direction)
+        {
+            int dx = 0, dy = 0;
+
+            if (!result.Movements.Any(x => x.DistanceMoved > 0))
+            {
+                return;
+            }
+
+            isMoving = true;
+
+            switch (direction)
+            {
+                case IMovableDirection.Down:
+                    (dx, dy) = (0, 1);
+                    break;
+                case IMovableDirection.Left:
+                    (dx, dy) = (-1, 0);
+                    break;
+                case IMovableDirection.Right:
+                    (dx, dy) = (1, 0);
+                    break;
+                case IMovableDirection.Up:
+                    (dx, dy) = (0, -1);
+                    break;
+            }
+        }
+
         void OnMoveComplete()
         {
         }
