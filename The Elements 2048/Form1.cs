@@ -35,6 +35,28 @@ namespace The_Elements_2048
 
         private void GameWindow_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Right)
+            {
+                var result = game.MoveRight();
+                EvaluateBoardResult(result, IMovableDirection.Right);
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                var result = game.MoveLeft();
+                EvaluateBoardResult(result, IMovableDirection.Left);
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                var result = game.MoveDown();
+                EvaluateBoardResult(result, IMovableDirection.Up);
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                var result = game.MoveUp();
+                EvaluateBoardResult(result, IMovableDirection.Down);
+            }
+        }
+
         void NewGame()
         {
             game = new Game();
