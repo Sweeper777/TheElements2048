@@ -71,5 +71,39 @@ namespace The_Elements_2048
             );
         }
 
+        void AnimateTile(int dx, int dy, PictureBox tile, Action completion)
+        {
+            if (dx != 0 && dy != 0)
+            {
+                throw new ArgumentException();
+            }
+
+            var animation = new Animation
+            {
+                DurationInFrames = Animation.FromTimeSpanToDurationInFrames(0.05),
+                EasingFunction = ef => Easing.EaseInOut(ef, EasingType.Quadratic)
+            };
+            if (dx != 0)
+            {
+                animation.AnimateOnControlThread(
+                    this,
+                    ObservableHelper.FixedValue((float)tile.Location.X),
+                    ObservableHelper.FixedValue((float)tile.Location.X + 115 * dx),
+                    v => tile.Location = new Point((int)v.CurrentValue, tile.Location.Y),
+                    completion
+                );
+            }
+            else
+            {
+                animation.AnimateOnControlThread(
+                    this,
+                    ObservableHelper.FixedValue((float)tile.Location.Y),
+                    ObservableHelper.FixedValue((float)tile.Location.Y + 115 * dy),
+                    v => tile.Location = new Point(tile.Location.X, (int)v.CurrentValue),
+                    completion
+                );
+            }
+            animation.Start();
+        }
         }
 }
