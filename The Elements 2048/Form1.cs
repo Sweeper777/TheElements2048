@@ -132,6 +132,27 @@ namespace The_Elements_2048
                     (dx, dy) = (0, -1);
                     break;
             }
+            foreach (var pictureBox in panel1.Controls.OfType<PictureBox>().Where(x => x.Tag is BoardPosition))
+            {
+                var pos = (BoardPosition)pictureBox.Tag;
+                var movement = result.Movements[pos.X, pos.Y];
+                Action completion = null;
+                var mergedPictures = new List<PictureBox>();
+
+                var newX = pos.X + movement.DistanceMoved * dx;
+                var newY = pos.Y + movement.DistanceMoved * dy;
+
+                if (movement.Merged)
+                {
+                    var mergedTo = result.Board[newX, newY];
+                    mergedPictures.Add(pictureBox);
+                    completion = () => pictureBox.Image = TheElements2048Utility.ElementImageDictionary[mergedTo];
+                }
+                pos.X = newX;
+                pos.Y = newY;
+                completion += OnMoveComplete;
+                AnimateTile(dx * movement.DistanceMoved, dy * movement.DistanceMoved, pictureBox, completion);
+            }
         }
 
         void OnMoveComplete()
