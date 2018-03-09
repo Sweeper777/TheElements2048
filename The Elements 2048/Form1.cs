@@ -191,6 +191,9 @@ namespace The_Elements_2048
                 game.SpawnNewElement();
                 Redraw();
                 lblScoreValue.Text = game.Score.ToString();
+                if (IsGameOver()) {
+                    MessageBox.Show("Game Over!", "The Elements 2048");
+                }
                 isMoving = false;
             }
         }
