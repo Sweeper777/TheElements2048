@@ -186,6 +186,13 @@ namespace The_Elements_2048
 
         void OnMoveComplete()
         {
+            if (isMoving)
+            {
+                game.SpawnNewElement();
+                Redraw();
+                lblScoreValue.Text = game.Score.ToString();
+                isMoving = false;
+            }
         }
         }
 }
