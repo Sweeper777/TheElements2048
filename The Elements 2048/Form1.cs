@@ -194,5 +194,11 @@ namespace The_Elements_2048
                 isMoving = false;
             }
         }
+
+        bool IsGameOver() {
+            if (game.Board.Any(x => x == Element.None)) {
+                return false;
+            }
         }
+    }
 }
