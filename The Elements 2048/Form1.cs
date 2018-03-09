@@ -37,6 +37,11 @@ namespace The_Elements_2048
 
         private void GameWindow_KeyDown(object sender, KeyEventArgs e)
         {
+            if (isMoving)
+            {
+                return;
+            }
+
             if (e.KeyCode == Keys.Right)
             {
                 var result = game.MoveRight();
