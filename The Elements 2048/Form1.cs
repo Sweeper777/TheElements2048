@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 using ReactiveAnimation;
@@ -30,9 +30,7 @@ namespace The_Elements_2048
 
         private void label3_Click(object sender, EventArgs e)
         {
-            //    Game.Current.Dispose ();
-            //    Game.CreateNewGame (this.panel1, Current_ScoreChanged, Current_HighscoreChanged);
-            //    this.lblScoreValue.Text = "0";
+            NewGame();
         }
 
         private void GameWindow_KeyDown(object sender, KeyEventArgs e)
