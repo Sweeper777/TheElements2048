@@ -204,6 +204,12 @@ namespace The_Elements_2048
                     return false;
                 }
             }
+            foreach (var row in game.Board.RotateClockwise().ToJagged()) {
+                if (Enumerable.Range(0, row.Length - 1).Select(x => row[x] == row[x + 1]).Any(x => x)) {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
