@@ -21,5 +21,15 @@ namespace The_Elements_2048
             timer.Start();
         }
 
+        public Animation(Action<int> onNewFrame, int fromValue, int toValue, double duration, Action completion)
+        {
+            this.onNewFrame = onNewFrame;
+            FromValue = fromValue;
+            ToValue = toValue;
+            this.completion = completion;
+            totalFrames = (int)(frameRate * duration);
+            step = (ToValue - FromValue) / totalFrames;
+        }
+
     }
 }
