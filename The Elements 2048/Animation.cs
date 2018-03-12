@@ -12,5 +12,8 @@ namespace The_Elements_2048
         int currentFrame;
         int totalFrames;
 
+        public int FromValue { get; }
+        public int ToValue { get; }
+
     }
 }
