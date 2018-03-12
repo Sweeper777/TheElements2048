@@ -15,5 +15,11 @@ namespace The_Elements_2048
         public int FromValue { get; }
         public int ToValue { get; }
 
+        static Animation() {
+            timer = new Timer();
+            timer.Interval = (int)(1.0 / frameRate * 1000);
+            timer.Start();
+        }
+
     }
 }
