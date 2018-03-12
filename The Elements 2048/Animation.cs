@@ -31,5 +31,15 @@ namespace The_Elements_2048
             step = (ToValue - FromValue) / totalFrames;
         }
 
+        void TimerTick(object sender, EventArgs e) {
+            var value = step * currentFrame + FromValue;
+            onNewFrame(value);
+            currentFrame++;
+            if (currentFrame > totalFrames) {
+                timer.Tick -= TimerTick;
+                completion();
+            }
+        }
+
     }
 }
