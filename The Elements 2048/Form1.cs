@@ -11,7 +11,7 @@ namespace The_Elements_2048
     public partial class GameWindow : Form
     {
         Game game;
-        bool isMoving = false;
+        bool isMoving;
 
         public GameWindow()
         {
