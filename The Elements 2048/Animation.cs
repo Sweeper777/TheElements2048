@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Windows.Forms;
 namespace The_Elements_2048
 {
@@ -41,5 +41,8 @@ namespace The_Elements_2048
             }
         }
 
+        public void Start() {
+            timer.Tick += TimerTick;
+        }
     }
 }
