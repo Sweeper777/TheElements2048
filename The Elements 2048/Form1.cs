@@ -12,6 +12,8 @@ namespace The_Elements_2048
         Game game;
         bool isMoving;
 
+        List<Animation> animations = new List<Animation>();
+
         public GameWindow()
         {
             InitializeComponent();
