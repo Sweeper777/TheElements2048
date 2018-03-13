@@ -107,6 +107,14 @@ namespace The_Elements_2048
             }
             if (dx != 0)
             {
+                var anim = new Animation(
+                    x => tile.Location = new Point(x, tile.Location.Y),
+                    tile.Location.X,
+                    tile.Location.X + dx * 115,
+                    0.1,
+                    OnMoveComplete);
+                animations.Add(anim);
+                anim.Start();
             }
             else
             {
