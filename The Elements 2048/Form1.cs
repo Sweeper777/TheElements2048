@@ -14,6 +14,8 @@ namespace The_Elements_2048
 
         List<Animation> animations = new List<Animation>();
 
+        int highscore;
+
         public GameWindow()
         {
             InitializeComponent();
