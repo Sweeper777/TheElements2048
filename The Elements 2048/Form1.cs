@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using GameEssentials;
 using System.Linq;
 using System.Collections.Generic;
+using System.IO;
 
 namespace The_Elements_2048
 {
@@ -19,6 +20,15 @@ namespace The_Elements_2048
         public GameWindow()
         {
             InitializeComponent();
+            try
+            {
+                highscore = GameDataSerializer<int>.Deserialize("TheElements2048");
+            }
+            catch (FileNotFoundException)
+            {
+
+            }
+            lblBestValue.Text = highscore.ToString();
             NewGame();
             //Game.CreateNewGame (this.panel1, Current_ScoreChanged, Current_HighscoreChanged, this.lblBestValue);
         }
