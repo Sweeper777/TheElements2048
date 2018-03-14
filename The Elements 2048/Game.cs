@@ -18,6 +18,10 @@ namespace The_Elements_2048
 
         public void SpawnNewElement(bool canSpawnHelium = false) {
             var emptySpaces = EmptySpaces;
+            if (emptySpaces.Count == 0)
+            {
+                return;
+            }
             var randomEmptySpace = emptySpaces[random.Next(emptySpaces.Count)];
             if (canSpawnHelium) {
                 var newElement = random.Next(3) == 0 ? Element.Helium : Element.Hydrogen;
