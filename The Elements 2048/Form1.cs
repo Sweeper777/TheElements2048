@@ -43,6 +43,7 @@ namespace The_Elements_2048
 
         private void label3_Click(object sender, EventArgs e)
         {
+            lblScoreValue.Text = "0";
             NewGame();
         }
 
@@ -213,17 +214,23 @@ namespace The_Elements_2048
             }
         }
 
-        bool IsGameOver() {
-            if (game.Board.Any(x => x == Element.None)) {
+        bool IsGameOver()
+        {
+            if (game.Board.Any(x => x == Element.None))
+            {
                 return false;
             }
-            foreach (var row in game.Board.ToJagged()) {
-                if (Enumerable.Range(0, row.Length - 1).Select(x => row[x] == row[x + 1]).Any(x => x)) {
+            foreach (var row in game.Board.ToJagged())
+            {
+                if (Enumerable.Range(0, row.Length - 1).Select(x => row[x] == row[x + 1]).Any(x => x))
+                {
                     return false;
                 }
             }
-            foreach (var row in game.Board.RotateClockwise().ToJagged()) {
-                if (Enumerable.Range(0, row.Length - 1).Select(x => row[x] == row[x + 1]).Any(x => x)) {
+            foreach (var row in game.Board.RotateClockwise().ToJagged())
+            {
+                if (Enumerable.Range(0, row.Length - 1).Select(x => row[x] == row[x + 1]).Any(x => x))
+                {
                     return false;
                 }
             }
