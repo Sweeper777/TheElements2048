@@ -202,8 +202,14 @@ namespace The_Elements_2048
                 if (IsGameOver())
                 {
                     MessageBox.Show("Game Over!", "The Elements 2048");
+
+                    if (game.Score > highscore)
+                    {
+                        highscore = game.Score;
+                        GameDataSerializer<int>.Serialize(highscore, "TheElements2048");
+                        lblBestValue.Text = highscore.ToString();
+                    }
                 }
-                isMoving = false;
             }
         }
 
