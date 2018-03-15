@@ -1,0 +1,4 @@
+/Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Release/The_Elements_2048.GameWindow.resources
+/Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Release/The_Elements_2048.Properties.Resources.resources
+/Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Release/The Elements 2048.csproj.GenerateResource.Cache
+/Users/mulangsu/Documents/TheElements2048/The Elements 2048/obj/Release/The Elements 2048.csproj.CoreCompileInputs.cache

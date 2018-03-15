@@ -1,10 +1,9 @@
 ﻿<Properties StartupConfiguration="{B105B556-25FD-4334-8AAB-63B7F1E59308}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="The Elements 2048/Game.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="The Elements 2048/Form1.cs">
     <Files>
-      <File FileName="The Elements 2048/MatrixUtility.cs" Line="12" Column="29" />
-      <File FileName="The Elements 2048/Game.cs" Line="46" Column="18" />
-      <File FileName="The Elements 2048/Program.cs" Line="29" Column="31" />
-      <File FileName="The Elements 2048/BoardResult.cs" Line="24" Column="9" />
+      <File FileName="The Elements 2048/Game.cs" Line="25" Column="13" />
+      <File FileName="The Elements 2048/Form1.cs" Line="212" Column="22" />
+      <File FileName="The Elements 2048/Animation.cs" Line="7" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

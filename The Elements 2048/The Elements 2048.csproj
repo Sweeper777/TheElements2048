@@ -121,6 +121,8 @@
     <Compile Include="Position.cs" />
     <Compile Include="MovementResult.cs" />
     <Compile Include="BoardResult.cs" />
+    <Compile Include="BoardPosition.cs" />
+    <Compile Include="Animation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
